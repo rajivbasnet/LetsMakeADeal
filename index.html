@@ -1,0 +1,72 @@
+<!–– Rajiv Basnet - Let's Make a Deal  ––>
+
+<html>
+<head>
+	<title>Let's Make a Deal</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src = "main.js"> </script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+
+<div class = "allcontent">
+	<div class="heading" id ="content">
+		<a href = "index.html"> <h1>  Let's Make A Deal  </h1> </a>
+		<h2> <strong> Click on a door to play. A prize could be behind any of the doors! </strong></h2>
+	</div>
+	
+	<div id="content">
+	
+	<form name = "myform" action = "second.php" method="post">
+	
+		<section class = "doorOne">
+			<fieldset class = "fieldsets">
+				<legend> Door I </legend>
+				<div class = "boxes" id = "box1">
+						
+						<input type="submit" name="door" value="1" style = "background-image: url('curtainClosed.gif');" src="curtainClosed.gif" class="door" id="door1"/>
+						
+				</div>
+			
+			</fieldset>
+		</section>
+		
+		<section class = "doorTwo">
+			<fieldset class = "fieldsets">
+				<legend> Door II </legend>
+				<div class = "boxes">
+						
+						<input type="submit" name="door" value="2" style = "background-image: url('curtainClosed.gif');" src="curtainClosed.gif"  class="door" id="door2"/>
+						
+				</div>
+			
+			</fieldset>
+		</section>
+			
+		
+		<section class = "doorThree">
+			<fieldset class = "fieldsets">
+				<legend> Door III </legend>
+				<div class = "boxes">
+						
+						<input type="submit" name="door" value="3" style = "background-image: url('curtainClosed.gif');" src="curtainClosed.gif"  class="door" id="door3"/>
+				
+				</div>
+			
+			</fieldset>
+		</section>
+			
+		
+	</form>
+	</div>
+	
+	
+	
+	<div id = "content" class = "footer">
+		Designed By Rajiv Basnet
+	</div>
+</div>
+</body>
+</html>
