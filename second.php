@@ -2,17 +2,39 @@
 
 
 <?php
-		$winningDoor = mt_rand(1,3);
-		
-		session_start();
-		$_SESSION['winningDoor']= $winningDoor;
-		
-		$firstPickDoor = $_POST["door"];
-		
-		$_SESSION['firstPickDoor']=$firstPickDoor;
-		
-		include "functions.php";
-		$openDoor = openFirstDoor($winningDoor, $firstPickDoor);
+	$winningDoor = rand(1,3);
+	
+	$firstPickDoor = $_POST["door"];
+	$openDoor = openFirstDoor($winningDoor, $firstPickDoor);
+
+	function openFirstDoor($winningDoor, $firstPickDoor){
+		if ($firstPickDoor == 1) {
+				if ($winningDoor != 2) {
+					$openDoor = 2;
+				}
+				elseif ($winningDoor != 3){
+					$openDoor = 3;
+				}
+			}
+			if ($firstPickDoor == 2) {
+				if ($winningDoor != 1) {
+					$openDoor = 1;
+				}
+				elseif ($winningDoor != 3){
+					$openDoor = 3;
+				}
+			}
+			if ($firstPickDoor == 3) {
+				if ($winningDoor != 1) {
+					$openDoor = 1;
+				}
+				elseif ($winningDoor != 2){
+					$openDoor = 2;
+				}
+			}
+			
+			return $openDoor;
+	}	
 ?>
 
 <html>
@@ -102,9 +124,16 @@
 	</div>
 	
 	
-	
+	<div id="content" class="footer">
+        <p style="text-align: center;">
+          <a href="http://www.letsmakeadeal.com/" target="_blank">
+            Here's the history of Let's Make A Deal
+          </a>
+        </p>
+      </div>
+	  
 	<div id = "content" class = "footer">
-		Designed By Rajiv Basnet
+		Page Designed By Rajiv Basnet
 	</div>
 </div>
 </body>

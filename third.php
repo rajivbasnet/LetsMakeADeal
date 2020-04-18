@@ -1,18 +1,24 @@
 <!–– Rajiv Basnet - Let's Make a Deal  ––>
 
-<?php
-		session_start();
-		$winningDoor = $_SESSION['winningDoor'];
-		
-		$firstPickDoor = $_SESSION['firstPickDoor'];
-		
-		$secondPickDoor = $_POST['doorSecondPick'];
 
+<?php
 		include "functions.php";
+		ob_start();
+		include 'second.php';
+		ob_end_clean();
+
+		echo($firstPickDoor);
+
+	
+		$secondPickDoor = $_POST['doorSecondPick'];
+		$firstPickDoor =  $_POST["door"];
+
+
 		$doorSwitchedOrNot = switchedOrNot($firstPickDoor, $secondPickDoor);
-		$result = findResult($winningDoor, $secondPickDoor);	
+		$result = findResult($winningDoor, $secondPickDoor);
 		
-		$submitted = insertIntoDatabase($firstPickDoor, $secondPickDoor, $winningDoor, $doorSwitchedOrNot, $result);
+
+		// insertIntoDatabase($firstPickDoor, $secondPickDoor, $winningDoor, $doorSwitchedOrNot, $result);
 		
 ?>
 
@@ -119,7 +125,7 @@
 	
 	
 	<div id = "content" class = "footer">
-		Designed By Rajiv Basnet
+		Page Designed By Rajiv Basnet
 	</div>
 </div>
 </body>
